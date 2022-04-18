@@ -1,2 +1,2 @@
-web: python server.py
-worker: python server.py 
+web: python glcm.py
+worker: python glcm.py 
