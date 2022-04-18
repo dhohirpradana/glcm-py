@@ -14,19 +14,18 @@ def test():
     r = request
 
     # convert string of image data to uint8
-    nparr = np.fromstring(r.data, np.uint8)
+    nparr = np.frombuffer(r.data, np.uint8)
 
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    # glcm
-    rgbImg = io.imread(
-        'https://ichef.bbci.co.uk/news/976/cpsprodpb/7614/production/_105482203__105172250_gettyimages-857294664.jpg')
-    grayImg = img_as_ubyte(color.rgb2gray(rgbImg))
+    grayImg = img_as_ubyte(color.rgb2gray(img))
 
-    # cv2.imshow("test img", grayImg)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
+    cv2.imshow("test img", grayImg)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+    # glcm
     properties = ['energy', 'contrast', 'homogeneity', 'correlation']
 
     glcm = feature.graycomatrix(grayImg,
