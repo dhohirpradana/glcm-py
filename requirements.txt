@@ -1,5 +1,5 @@
 numpy
-skimage
+scikit-image
 cv2
 flask
 jsonpickle
