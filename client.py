@@ -3,7 +3,7 @@ import json
 import cv2
 from skimage import io
 
-addr = 'http://localhost:5000'
+addr = 'https://babahaha-glcm.herokuapp.com'
 test_url = addr + '/api/test'
 
 # prepare headers for http request
